@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 一些关于游戏的话题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f7f5f2;
+      font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+      line-height: 1.7;
+      color: #2e2b28;
+    }
+    /* 深色头图 hero */
+    .hero {
+      background: #1e1c1a;
+      color: #e8e2da;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #ba9f7b;
+      margin: 1.2rem auto 0;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #b5a99a;
+      max-width: 480px;
+      margin: 0.8rem auto 0;
+      line-height: 1.6;
+    }
+    /* 正文浅色区 */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem 3.5rem;
+      background: #ffffff;
+    }
+    .content p {
+      margin-bottom: 1.4rem;
+      font-size: 1.03rem;
+    }
+    .content .intro {
+      font-size: 1.12rem;
+      color: #3b3631;
+    }
+    .content .intro strong {
+      color: #7f5e3c;
+      font-weight: 500;
+    }
+    /* 引用块 */
+    .quote-block {
+      background: #f4efe9;
+      border-left: 5px solid #ba9f7b;
+      padding: 1.2rem 1.8rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #4f463d;
+      border-radius: 0 8px 8px 0;
+    }
+    .quote-block::before {
+      content: '“';
+      font-size: 2rem;
+      color: #ba9f7b;
+      margin-right: 6px;
+      vertical-align: -0.25rem;
+    }
+    /* 强调色链接 */
+    a {
+      color: #7f5e3c;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.2s;
+    }
+    a:hover {
+      color: #a3805a;
+      border-bottom-color: #a3805a;
+    }
+    /* 卡片式细节点 */
+    .game-note {
+      background: #faf8f5;
+      padding: 1.6rem 1.8rem;
+      margin: 2.2rem 0;
+      border: 1px solid #e7dfd6;
+      border-radius: 12px;
+    }
+    .game-note h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3f3830;
+      margin-bottom: 0.8rem;
+    }
+    .game-note p {
+      margin-bottom: 0.5rem;
+    }
+    hr {
+      margin: 2.5rem 0 1.8rem;
+      border: 0;
+      border-top: 1px solid #ddd6cc;
+    }
+    /* FAQ 摘要样式 —— 极简问答 */
+    .faq-item {
+      margin: 1.4rem 0;
+    }
+    .faq-question {
+      font-weight: 500;
+      color: #3f3830;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .faq-question::before {
+      content: 'Q:';
+      color: #ba9f7b;
+      font-weight: 500;
+    }
+    .faq-answer {
+      padding-left: 1.8rem;
+      color: #4f463d;
+    }
+    .faq-answer::before {
+      content: '— ';
+      color: #ba9f7b;
+    }
+    .closing {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      font-size: 0.95rem;
+      color: #6b6054;
+      border-top: 1px solid #e8dfd6;
+      text-align: center;
+    }
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 3.5rem 1.2rem 2.8rem;
+      }
+      .content {
+        padding: 2rem 1.2rem 2.8rem;
+      }
+      .game-note {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>爱游戏</h1>
+  <p class="sub">一个关于游戏如何陪伴日常、塑造视角的私人笔记</p>
+</section>
+
+<div class="content">
+
+  <p class="intro">
+    游戏从来不只是按钮与像素。它们更像一种沉默的叙事：你坐下来，拿起手柄或鼠标，另一段故事便开始了。<strong>爱游戏</strong>——这三个字背后，藏着许多人对待时间、挑战乃至社交的方式。今天想聊聊那种安静又克制的热爱。
+  </p>
+
+  <p>
+    大概是从十几年前某个冬夜开始，我第一次在昏暗的屏幕上看见一个像素小人跳过了沟壑。没有复杂的剧情，只有跳跃、失败、再跳跃。奇怪的是，那种重复并没有让我厌倦，反而让我开始注意游戏里微小的节奏：落地的声音、背景里飘动的云、以及每次死亡后屏幕变暗的速度。后来我才明白，那种专注本身，就是游戏赠予的礼物。
+  </p>
+
+  <div class="quote-block">
+    有人曾问我，为什么愿意花几小时在虚拟世界里走来走去。我说，你在现实里散步时，也不见得非要一个目的。游戏里的漫步，同样让人安静。
+  </div>
+
+  <p>
+    如今我依然不算重度玩家，但习惯在书桌上留一台旧掌机。偶尔失眠的深夜，打开一个慢节奏的经营游戏，看着虚拟的角色种田、钓鱼、布置房间。那种秩序感让人放松。而这一切的基础，是始终有一个可以回去的、稳定的数字角落——就像<a href="https://appi-game.com.cn" style="border-bottom:1px solid;">爱游戏</a>所试图承载的气质：不喧哗，不催促，只是在那里。
+  </p>
+
+  <div class="game-note">
+    <h3>一个私人观察</h3>
+    <p>很多游戏最动人的部分，反而出现在玩法之外：主菜单等待时的音乐、天气变化时的光影、NPC不经意的一句话。这些细节像游戏世界的“沉默的旁白”，不爱说话却很真实。</p>
+    <p>如果你也留意过这些，大概能理解为什么有人会为一座虚拟瀑布停留三分钟。</p>
+  </div>
+
+  <p>
+    当然，游戏也有它的实用面。不少人通过合作通关认识了真正的好友，也有人因为策略游戏锻炼了规划和耐心。我不是说游戏优于其他媒介，而是它提供了一种独特且诚实的互动：你做得怎样，系统马上就有反馈。这种即时且无修饰的回应，在现实中其实很难得。
+  </p>
+
+  <hr>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-item">
+    <div class="faq-question">游戏时间太长会不会不好？</div>
+    <div class="faq-answer">任何事过度都不好。但“适度”因人而异，关键是游戏之后你是否还保留对真实生活的兴趣。好的游戏不会让人逃离，而是让人带着某种满足感回到现实。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">怎么找到适合自己的游戏？</div>
+    <div class="faq-answer">从你平时喜欢的电影、书或者爱好入手。喜欢悬疑可以试试解谜类，喜欢安静节奏可以看看模拟或建造类。不必跟风，慢一点选也无妨。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">游戏能带来真正的朋友吗？</div>
+    <div class="faq-answer">能。前提是你们除了游戏也聊生活。就像一起钓鱼的人未必只谈鱼，一起打本的队友也可能成为多年老友。游戏只是引子，真诚才是纽带。</div>
+  </div>
+
+  <p style="margin-top:2rem;">
+    最后想分享一个很小的习惯：我偶尔会在游戏里截图，不是拍成就或风景，而是那些“刚好路过的瞬间”——比如角色站在雨里等天亮，或者某个NPC说完一句话后转身走远的背影。这些截图存在手机里，没什么用，但每次翻到都像打开一小段安静的日子。大概这就是<strong>爱游戏</strong>最朴素的样子：不为了赢，也不为了炫耀，只是给自己的时间留一些可以回味的画面。
+  </p>
+
+  <div class="closing">
+    如果你也有类似的瞬间，<span style="color:#7f5e3c;">爱游戏</span>或许是一个可以安静存放这些感受的地方。
+  </div>
+
+</div>
+
+</body>
+</html>
