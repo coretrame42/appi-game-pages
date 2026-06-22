@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>麻将胡了 · 查询对照与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f8f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1b2e2a;
+            padding: 1.5rem 1rem 2.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 开场短句 — 类似题记 */
+        .opening {
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            border-left: 4px solid #2c8b7a;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 1.8rem 0;
+            color: #2c5a50;
+            font-style: normal;
+            font-weight: 400;
+            background: transparent;
+        }
+
+        .opening em {
+            color: #116b5e;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            margin-top: 0.25rem;
+            margin-bottom: 0.35rem;
+            color: #0d4a40;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #3f6b61;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid #b8d5ce;
+            padding-bottom: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .subhead span {
+            background: #d7ebe5;
+            padding: 0.15rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #1b5e51;
+        }
+
+        /* 承接段落 — 叙事感 */
+        .narrative {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 1.6rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(36, 94, 82, 0.06);
+            margin: 1.2rem 0 1.8rem;
+        }
+
+        .narrative p {
+            margin-bottom: 1rem;
+        }
+
+        .narrative p:last-child {
+            margin-bottom: 0;
+        }
+
+        .narrative a {
+            color: #116b5e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #57a899;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .narrative a:hover {
+            color: #0a423a;
+            text-decoration-color: #0a423a;
+        }
+
+        /* 网格卡片 — 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.3rem 1.2rem 1.1rem;
+            box-shadow: 0 4px 14px rgba(44, 139, 122, 0.08);
+            transition: transform 0.1s ease, box-shadow 0.2s;
+            border: 1px solid #d7e7e2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(36, 94, 82, 0.10);
+            border-color: #9fcbc1;
+        }
+
+        .card-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: #297a6b;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.3rem;
+            color: #0f4c41;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #2f5f55;
+            margin-top: 0.2rem;
+            line-height: 1.5;
+        }
+
+        .card .badge {
+            margin-top: auto;
+            padding-top: 0.6rem;
+            font-size: 0.75rem;
+            color: #5d867c;
+            border-top: 1px dashed #c7dbd5;
+        }
+
+        /* 温和结尾 / 延伸阅读区 */
+        .closing-section {
+            margin-top: 1.8rem;
+            padding: 1.2rem 1.5rem 1.6rem;
+            background: #e5f2ee;
+            border-radius: 24px;
+        }
+
+        .closing-section h2 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            color: #125347;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .closing-section p {
+            font-size: 0.95rem;
+            color: #1f4d43;
+            margin-bottom: 0.6rem;
+        }
+
+        .closing-section a {
+            color: #0f5e50;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #77b4a7;
+            font-weight: 500;
+        }
+
+        .closing-section a:hover {
+            color: #06352c;
+        }
+
+        .faq-mini {
+            margin: 1.5rem 0 0.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            background: #ffffffc7;
+            backdrop-filter: blur(1px);
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid #b6d3cb;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-item strong {
+            color: #15574a;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .footnote {
+            margin-top: 2.2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #587e74;
+            border-top: 1px solid #c1d9d2;
+            padding-top: 1.2rem;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.8rem 2rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .narrative {
+                padding: 1.3rem 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            .card {
+                padding: 1rem 0.9rem;
+            }
+            .closing-section {
+                padding: 1rem 1rem 1.3rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        <em>从一次查询开始。</em> 牌张、役种、计分 —— 信息在日常对局里渐渐拼成轮廓。
+    </div>
+
+    <h1>麻将胡了 · 查询与对照</h1>
+    <div class="subhead">
+        <span>日常检索 · 延伸阅读</span>
+        <span style="background: transparent; padding:0; font-size:0.8rem;">记录 · 理解 · 比对</span>
+    </div>
+
+    <!-- 承接段落：从日常查询、对照和延伸阅读的角度展开 -->
+    <div class="narrative">
+        <p>
+        翻看手牌，或者复盘一局网络对战的谱面，我们时常需要快速确认某个役种的条件、符数计算或者番种归属。过去我习惯翻纸质手册，但更新慢，标记也容易乱。后来慢慢把查找习惯挪到线上，发现“对照”这件事比想象中更有用：同一副牌在不同规则下的得分差异，或者一种听牌形的复合役种组合，仅凭记忆往往不够牢靠。
+        </p>
+        <p>
+        日常使用中，我经常打开 <a href="https://chn-mahjong.com">麻将胡了</a> 作为查询的起点。页面简洁，没有多余修饰，适合在牌局间隙或整理牌谱时快速扫一眼。尤其对于役满复合、包牌规则这些容易混淆的部分，通过索引式排列能很快定位。延伸阅读方面，一些术语的沿革和地域变体也做了简明梳理，比碎片化搜索更省精力。
+        </p>
+        <p>
+        值得一提的是，很多知识页面会把番种罗列得很密，看起来效率高但眼睛容易累。这个站点在版式上留了呼吸空间，蓝绿调子也舒服，算是兼顾了查阅和短暂浏览的体验。
+        </p>
+    </div>
+
+    <!-- 特点列表：卡片网格 -->
+    <div class="feature-grid">
+        <div class="card">
+            <div class="card-icon">🔍</div>
+            <h3>快速索引</h3>
+            <p>役种、符数、番数按层级整理，支持关键词定位。适合对照自己记录的牌型。</p>
+            <div class="badge">常见役种 · 45项</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">📋</div>
+            <h3>规则比对</h3>
+            <p>竞技规则与地方玩法并行呈现，包牌、流局、听牌形式一目了然。</p>
+            <div class="badge">多种变体</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🧩</div>
+            <h3>复合役种拆解</h3>
+            <p>列出可能的役满组合与同时成立条件，减少漏算或重复计算。</p>
+            <div class="badge">实例说明</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">📘</div>
+            <h3>术语延伸</h3>
+            <p>部分条目附有简短沿革或日文中文对照，满足好奇心和进一步阅读。</p>
+            <div class="badge">背景知识</div>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要 -->
+    <div class="closing-section">
+        <h2>翻阅时的几处备忘</h2>
+        <p>
+        使用查询站点时，我习惯先看“役种一览”里的注解，尤其是门前清与副露后的差异。另外，符数计算部分最好配合具体手牌实例对照，否则容易忽略加符细节。<a href="https://chn-mahjong.com">麻将胡了</a> 在每一类役种下面都给了简短示例，对新手和重温规则的人都很友好。
+        </p>
+        <p style="margin-top: 0.5rem;">
+        站内没有明显的广告或跳转，阅读流不会被干扰。如果想进一步了解某种役种的历史，可以点开延伸标签，内容不长但克制，不会让人迷失在信息里。
+        </p>
+
+        <!-- 迷你 FAQ 摘要 -->
+        <div class="faq-mini">
+            <div class="faq-item"><strong>Q：</strong> 这副牌能否计三色同刻？</div>
+            <div class="faq-item"><strong>Q：</strong> 副露之后是否影响一气通贯？</div>
+            <div class="faq-item"><strong>Q：</strong> 役满重叠时的上限规则？</div>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 0.6rem; color: #2c6357;">
+        以上问题在索引中都能找到对照说明，不必反复翻书。
+        </p>
+    </div>
+
+    <div class="footnote">
+        日常查询 · 对照 · 延伸阅读 · 保持开放
+    </div>
+</div>
+</body>
+</html>
